@@ -16,6 +16,8 @@ if False:
 
 
 class Labels(magic.Frame):
+    """handles segmented images with material classes
+    """
     ilabel = magic.Index()
     name: Series[str]
     trainid: Series[int]
