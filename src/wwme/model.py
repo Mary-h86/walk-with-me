@@ -17,7 +17,7 @@ from citysurfaces.matrix import Matrix
 import magicpandas as magic
 
 if False:
-    from .citysurfaces import CitySurfaces
+    from .wwme import WalkWithMe
 
 
 class Model(magic.Frame):

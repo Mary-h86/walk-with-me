@@ -12,7 +12,7 @@ import geopandas as gpd
 import magicpandas as magic
 
 if False:
-    from .citysurfaces import CitySurfaces
+    from .wwme import WalkWithMe
 
 
 class StreetView:

@@ -17,7 +17,7 @@ from citysurfaces.matrix import Matrix
 import magicpandas as magic
 
 if False:
-    from .citysurfaces import CitySurfaces
+    from .wwme import WalkWithMe
 
 
 class Truth(Matrix):
@@ -30,8 +30,8 @@ class Truth(Matrix):
     py: Series[float]
     heading: Series[float]
     pitch: Series[float]
-    root: CitySurfaces
-    owner: CitySurfaces
+    root: WalkWithMe
+    owner: WalkWithMe
 
     @magic.column
     def path(self) -> Series[str]:

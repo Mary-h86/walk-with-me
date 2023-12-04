@@ -15,7 +15,7 @@ from citysurfaces.truth import Truth
 from citysurfaces.train.train import Train
 
 
-class CitySurfaces(magic.geo.Root):
+class WalkWithMe(magic.geo.Root):
     x = magic.Index()
     y = magic.Index()
     labels = Labels()
@@ -28,7 +28,7 @@ class CitySurfaces(magic.geo.Root):
     def from_assets(
             cls,
             *args,
-    ) -> CitySurfaces:
+    ) -> WalkWithMe:
         ...
 
     @classmethod
@@ -45,7 +45,7 @@ class CitySurfaces(magic.geo.Root):
 
 
 if __name__ == '__main__':
-    cs = CitySurfaces.from_assets()
+    cs = WalkWithMe.from_assets()
     epoch = cs.epochs[9]
     _ = epoch.prediction, epoch.uncertainty, epoch.miou, cs.labels
     cs.train.lr = .003

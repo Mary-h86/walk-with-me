@@ -12,11 +12,11 @@ import geopandas as gpd
 import magicpandas as magic
 
 if False:
-    from .citysurfaces import CitySurfaces
+    from .wwme import WalkWithMe
 
 
 class Matrix(magic.Frame):
-    owner: CitySurfaces
+    owner: WalkWithMe
     x = magic.Index()
     y = magic.Index()
 

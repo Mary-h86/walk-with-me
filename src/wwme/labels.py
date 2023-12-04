@@ -12,7 +12,7 @@ import geopandas as gpd
 import magicpandas as magic
 
 if False:
-    from .citysurfaces import CitySurfaces
+    from .wwme import WalkWithMe
 
 
 class Labels(magic.Frame):
@@ -23,7 +23,7 @@ class Labels(magic.Frame):
     g: Series[int]
     b: Series[int]
 
-    def from_nested(self, owner: CitySurfaces) -> Labels:
+    def from_nested(self, owner: WalkWithMe) -> Labels:
         # name id ilabel color r g b mapping,
         csv = """
         concrete,1,0,255,127,14

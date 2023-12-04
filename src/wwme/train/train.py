@@ -12,7 +12,7 @@ import geopandas as gpd
 import magicpandas as magic
 
 if False:
-    from ..citysurfaces import CitySurfaces
+    from ..wwme import WalkWithMe
 
 from citysurfaces.train.args import Args
 
@@ -22,13 +22,13 @@ class Train(Args):
             self,
             *args,
             **kwargs
-    ) -> CitySurfaces:
+    ) -> WalkWithMe:
         """
 
         :param args:
         :param kwargs:
         :return: A CitySurfaces object with a new model that may be saved or run again
         """
-        result: CitySurfaces
+        result: WalkWithMe
         result.stage += 1
         return result

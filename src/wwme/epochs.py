@@ -17,11 +17,11 @@ from citysurfaces.matrix import Matrix
 import magicpandas as magic
 
 if False:
-    from .citysurfaces import CitySurfaces
+    from .wwme import WalkWithMe
 
 
 class Prediction(Matrix):
-    root: CitySurfaces
+    root: WalkWithMe
     owner: Epoch
 
     @magic.column
@@ -31,7 +31,7 @@ class Prediction(Matrix):
 
 
 class Uncertainty(Matrix):
-    root: CitySurfaces
+    root: WalkWithMe
     owner: Epoch
 
     @magic.column
@@ -45,8 +45,8 @@ class Epoch(magic.Frame):
     y = magic.Index()
     prediction = Prediction.from_kwargs(align=True)
     uncertainty = Uncertainty.from_kwargs(align=True)
-    owner: CitySurfaces
-    root: CitySurfaces  # todo assign
+    owner: WalkWithMe
+    root: WalkWithMe  # todo assign
 
     @magic.column
     def miou(self) -> Series[float]:
@@ -58,7 +58,7 @@ class Epochs(collections.UserDict, magic.Frame):
     def __init__(self):
         super().__init__()
         # noinspection PyTypeChecker
-        self.data: dict[CitySurfaces, list[Epoch]] = weakref.WeakKeyDictionary()
+        self.data: dict[WalkWithMe, list[Epoch]] = weakref.WeakKeyDictionary()
 
     def __get__(self, instance, owner) -> Epochs:
         self.owner = instance
